@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>News feed website</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+      crossorigin="anonymous"
+    />
+    <link href="style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <div class="header_area shadow-sm px-0">
+      <div class="row justify-content-between align-items-center g-0">
+        <div class="col-2 col-md-1 col-xl-2 text-start">
+          <span class="icon w-100 px-3" type="button" id="side_bar_btn">
+            <i class="fa fa-th-list"></i>
+          </span>
+        </div>
+        <div class="col-8 col-md-10 col-xl-8 col-xxl-8">
+          <div class="">
+            <div class="input-group">
+              <input
+                id="quick_search"
+                type="text"
+                class="form-control border-0 bg-light text-center"
+                placeholder="Quick search..."
+              />
+              <button id="quick_search_btn" class="btn bg-light text-black-50">
+                <i class="fa fa-search px-2"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-2 col-md-1 col-xl-2 text-end">
+          <span class="icon w-100 px-3" type="button" data-bs-toggle="modal" data-bs-target="#search_modal">
+            <i class="fa fa-search"></i>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="news_area">
+      <div class="row justify-content-center g-0">
+        <div class="col-11 col-md-10 col-lg-10 col-xl-8 col-xxl-8">
+          <div id="news_status" class="d-block d-sm-block"></div>
+          <div class="row">
+            <div class="col-lg-8">
+              <div id="news_cards_area"></div>
+            </div>
+            <div class="col-lg-4">
+              <div id="widgets_area" class="d-none d-lg-block"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="side_bar_area">
+      <div class="side_bar shadow-sm" id="side_bar">
+        <ul>
+          <li><a href="#" id="menu_headlines">Headlines</a></li>
+          <li><a href="#" id="menu_covid19">Covid19</a></li>
+        </ul>
+        <ul>
+          <li><a href="#" id="menu_business">Business</a></li>
+          <li><a href="#" id="menu_technology">Technology</a></li>
+          <li><a href="#" id="menu_entertainment">Entertainment</a></li>
+          <li><a href="#" id="menu_sport">Sport</a></li>
+          <li><a href="#" id="menu_science">Science</a></li>
+          <li><a href="#" id="menu_health">Health</a></li>
+        </ul>
+        <ul>
+          <li><a href="#" id="menu_gnewsio">GNews</a></li>
+          <li><a href="#" id="menu_mediastackcom">Media stack</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="modal fade" id="search_modal" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content border-0 shadow-sm bg-light">
+          <form class="px-3 py-4">
+            <div class="input-group input-group-lg my-3 shadow-sm">
+              <input id="deep_search" type="text" class="form-control border-0" placeholder="Enter your keywords..." />
+              <button id="deep_search_btn" class="btn border-0 bg-white text-black-50">
+                <i class="fa fa-search px-2"></i>
+              </button>
+            </div>
+            <div class="row">
+              <div class="col-sm-6">
+                <label for="" class="">From</label>
+                <input id="search_from" type="date" class="form-control form-control-sm border-0 text-black-50" />
+              </div>
+              <div class="col-sm-6">
+                <label for="" class="">To</label>
+                <input id="search_to" type="date" class="form-control form-control-sm border-0 text-black-50" />
+              </div>
+            </div>
+            <div class="row">
+              <div>
+                <div class="form-check form-check-inline my-4">
+                  <input class="form-check-input" type="checkbox" id="english_checkbox" value="en" checked />
+                  <label class="form-check-label text-black-50" for="english_checkbox"
+                    >Only search news in English</label
+                  >
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
